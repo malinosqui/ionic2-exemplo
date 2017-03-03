@@ -1,0 +1,46 @@
+<!--
+  Generated template for the CompanyForm page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>Nova empresa</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <ion-list no-lines>
+    <form [formGroup]="companyForm">
+      <ion-item>
+        <ion-label floating>Razão Social</ion-label>
+        <ion-input type="text" formControlName="name" [class.invalid]="!companyForm.controls.name.valid && (companyForm.controls.name.dirty || submitAttempt)"></ion-input>
+      </ion-item>
+      <ion-item *ngIf="!companyForm.controls.name.valid  && (companyForm.controls.name.dirty || submitAttempt)">
+        <p>Por favor, entre com uma razão social válida.</p>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>CNPJ</ion-label>
+        <ion-input type="text" formControlName="document" [class.invalid]="!companyForm.controls.document.valid && (companyForm.controls.document.dirty || submitAttempt)"></ion-input>
+      </ion-item>
+      <ion-item *ngIf="!companyForm.controls.document.valid  && (companyForm.controls.document.dirty || submitAttempt)">
+        <p>Por favor, entre com um CNPJ válido.</p>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Máximo de usuários</ion-label>
+        <ion-input type="tel" formControlName="maxUsers" [class.invalid]="!companyForm.controls.maxUsers.valid && (companyForm.controls.maxUsers.dirty || submitAttempt)"></ion-input>
+      </ion-item>
+      <ion-item *ngIf="!companyForm.controls.maxUsers.valid  && (companyForm.controls.maxUsers.dirty || submitAttempt)">
+        <p>Por favor, entre com uma quantidade máxima de usuários válida.</p>
+      </ion-item>
+    </form>
+  </ion-list>
+
+  <div padding>
+    <button ion-button full color="secondary" (click)="save()">Salvar</button>
+  </div>
+</ion-content>
