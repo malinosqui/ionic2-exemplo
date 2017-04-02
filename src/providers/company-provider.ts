@@ -18,7 +18,7 @@ const momentConstructor: (value?: any) => moment.Moment = (<any>moment).default 
 
 @Injectable()
 export class CompanyProvider {
-  API_ENDPOINT: String = 'http://192.168.1.103:3000/';
+  API_ENDPOINT: String = 'http://192.168.0.106:3000/';
   headers: any = { 'Content-Type': 'application/json' };
 
   constructor(public http: Http, public connectionProvider: ConnectionProvider,

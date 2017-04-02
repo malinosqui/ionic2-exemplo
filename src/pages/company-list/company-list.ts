@@ -56,7 +56,7 @@ export class CompanyListPage {
     });
   }
 
-  ionViewDidLoad() {
+  ionViewDidEnter() {
     this.companyProvider.syncSavedLocal().then(() => {
       this.getCompanies();
     });
